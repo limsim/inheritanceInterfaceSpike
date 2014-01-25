@@ -13,17 +13,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class TheUser implements ApplicationContextAware{
 
     ApplicationContext applicationContext = null;
+    final String the = "the";
+    final String other = "Other";
 
     @Test
     public void myTest() {
-        theInterface something = (theInterface) applicationContext.getBean("theClass");
+        theInterface something = (theInterface) applicationContext.getBean(the + "Class");
         something.method1();
         something.method2();
     }
 
     @Test
     public void dummy() {
-        theInterface something = (theInterface) applicationContext.getBean("OtherClass");
+        theInterface something = (theInterface) applicationContext.getBean(other + "Class");
         something.method1();
         something.method2();
     }
